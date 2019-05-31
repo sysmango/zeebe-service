@@ -1,0 +1,11 @@
+---
+- name: Start Zeebe Service
+  docker_swarm_service:
+    name: zeebe
+    image: registry.sysmango.net/camunda/zeebe:latest
+    networks:
+    - mangonet
+    labels:
+      "traefik.port=26500"
+    docker_host: tcp://sysmango.net:2375
+
